@@ -1,0 +1,10 @@
+/*******************************************************************************
+* KindEditor - WYSIWYG HTML Editor for Internet
+* Copyright (C) 2006-2011 kindsoft.net
+*
+* @author Roddy <luolonghao@gmail.com>
+* @site http://www.kindsoft.net/
+* @licence http://www.kindsoft.net/license.php
+*******************************************************************************/
+// Baidu Maps: http://dev.baidu.com/wiki/map/index.php?title=%E9%A6%96%E9%A1%B5
+KindEditor.plugin("baidumap",function(e){var t=this,n="baidumap",r=t.lang(n+".");t.clickToolbar(n,function(){function h(){f=c[0].contentWindow,l=e.iframeDoc(c)}var i=['<div style="padding:10px 20px;">','<div class="ke-dialog-row">',r.address+' <input id="kindeditor_plugin_map_address" name="address" class="ke-input-text" value="" style="width:200px;" /> ','<span class="ke-button-common ke-button-outer">','<input type="button" name="searchBtn" class="ke-button-common ke-button" value="'+r.search+'" />',"</span>","</div>",'<div class="ke-map" style="width:558px;height:360px;"></div>',"</div>"].join(""),s=t.createDialog({name:n,width:600,title:t.lang(n),body:i,yesBtn:{name:t.lang("yes"),click:function(e){var n=f.map,r=n.getCenter(),i=r.lng+","+r.lat,s=n.getZoom(),o=["http://api.map.baidu.com/staticimage","?center="+encodeURIComponent(i),"&zoom="+encodeURIComponent(s),"&width=558","&height=360","&markers="+encodeURIComponent(i),"&markerStyles="+encodeURIComponent("l,A")].join("");t.exec("insertimage",o).hideDialog().focus()}},beforeRemove:function(){a.remove(),l&&l.write(""),c.remove()}}),o=s.div,u=e('[name="address"]',o),a=e('[name="searchBtn"]',o),f,l,c=e('<iframe class="ke-textarea" frameborder="0" src="'+t.pluginsPath+'baidumap/map.html" style="width:558px;height:360px;"></iframe>');c.bind("load",function(){c.unbind("load"),e.IE?h():setTimeout(h,0)}),e(".ke-map",o).replaceWith(c),a.click(function(){f.search(u.val())})})});
