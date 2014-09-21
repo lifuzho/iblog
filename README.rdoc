@@ -200,7 +200,3 @@ app/helpers
 config
   Configuration files for the Rails environment, the routing map, the database,
   and other dependencies.
-
-db
-  Contains the database schema in schema.rb. db/migrate contains all the
-  sequence of Migrations for your schema.
