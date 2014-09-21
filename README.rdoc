@@ -208,8 +208,3 @@ db
 doc
   This directory is where your application documentation will be stored when
   generated using <tt>rake doc:app</tt>
-
-lib
-  Application specific libraries. Basically, any kind of custom code that
-  doesn't belong under controllers, models, or helpers. This directory is in
-  the load path.
