@@ -204,7 +204,3 @@ config
 db
   Contains the database schema in schema.rb. db/migrate contains all the
   sequence of Migrations for your schema.
-
-doc
-  This directory is where your application documentation will be stored when
-  generated using <tt>rake doc:app</tt>
